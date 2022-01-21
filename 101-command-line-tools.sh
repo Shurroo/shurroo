@@ -4,5 +4,5 @@
 # Applicable versions:
 #   - 12.x Monterey
 
-printf "Requesting command line tools installation"
+printf "Requesting command line tools installation\n"
 sudo xcode-select --install

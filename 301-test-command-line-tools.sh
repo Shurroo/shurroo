@@ -4,7 +4,7 @@
 # Applicable versions:
 #   - 12.x Monterey
 
-printf "Fetching package information"
+printf "Fetching package information\n"
 pkgutil --pkg-info=com.apple.pkg.CLTools_Executables
 pkgutil --pkg-info=com.apple.pkg.CLTools_macOS_SDK
 pkgutil --pkg-info=com.apple.pkg.CLTools_SDK_macOS110
