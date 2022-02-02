@@ -6,3 +6,6 @@
 
 printf "Checking Homebrew status\n"
 brew doctor
+
+
+# END

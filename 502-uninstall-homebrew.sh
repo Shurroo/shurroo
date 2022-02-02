@@ -22,3 +22,6 @@ sudo rm -rf /usr/local/opt/
 sudo rm -rf /usr/local/sbin/
 sudo rm -rf /usr/local/share/
 sudo rm -rf /usr/local/var/
+
+
+# END
