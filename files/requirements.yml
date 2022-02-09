@@ -3,3 +3,7 @@
 - src: https://github.com/Shurroo/git.git
   name: Shurroo.git
   version: master
+
+- src: https://github.com/Shurroo/zsh.git
+
+...
