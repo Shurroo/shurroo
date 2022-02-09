@@ -1,11 +1,18 @@
 # Component of Shurroo https://github.com/shurroo/shurroo
 
-# Installs Ansible
+# Installs Ansible and collects the required roles
 # Applicable versions:
 #   - 12.x Monterey
 
 printf "Installing Ansible\n"
 brew install ansible
+cd ~/.shurroo
+if [[ -f "/Volumes/Shurroo/requirements.yml" ]]
+then
+  ansible-galaxy install -f -r /Volumes/Shurroo/requirements.yml
+else
+  ansible-galaxy install -f -r requirements.yml
+fi
 
 
 # END

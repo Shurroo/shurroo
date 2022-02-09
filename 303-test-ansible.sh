@@ -6,6 +6,8 @@
 
 printf "Checking Ansible status\n"
 ansible --version
+printf "Listing Ansible roles"
+ls ~/.shurroo/roles
 
 
 # END

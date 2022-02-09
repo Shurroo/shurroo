@@ -6,6 +6,9 @@
 
 printf "Uninstalling Ansible\n"
 brew uninstall ansible
+#TODO
+printf "Removing installed roles\n"
+printf "-- NOT implemented yet --\n"
 
 
 # END
