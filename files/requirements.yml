@@ -1,0 +1,5 @@
+---
+
+- src: https://github.com/Shurroo/git.git
+  name: Shurroo.git
+  version: master
