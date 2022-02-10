@@ -29,7 +29,29 @@ then
   exit 1
 fi
 
-printf "Looking for '%s'\n" "$script_location/shurroo-$1.sh"
+action_file="$script_location/shurroo-$1.sh"
+
+printf "Looking for '%s'\n" "$action_file"
+ls -al "$action_file"
+if [[ -f "$action_file" ]]
+then
+  printf "File is a regular file\n"
+else
+  printf "File is NOT a regular file\n"
+fi
+if [[ -e "$action_file" ]]
+then
+  printf "File exists\n"
+else
+  printf "File does NOT exist\n"
+fi
+if [[ -x "$action_file" ]]
+then
+  printf "File is executable\n"
+else
+  printf "File is NOT executable\n"
+fi
+
 # Can we execute the script file?
 if [[ ! -x "$script_location/shurroo-$1.sh" ]]
 then
