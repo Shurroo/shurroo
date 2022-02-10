@@ -1,7 +1,8 @@
 #!/bin/bash
 
+USER_HOME=$(printf "%s" ~)
 CUSTOM_LOCATION="/Volumes/Shurroo"
-DEFAULT_LOCATION="~/.shurroo"
+DEFAULT_LOCATION="${USER_HOME}""/.shurroo"
 CUSTOM_FILE="${CUSTOM_LOCATION}""/requirements.yml"
 DEFAULT_FILE="${DEFAULT_LOCATION}""/requirements.yml"
 

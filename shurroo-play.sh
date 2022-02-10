@@ -1,12 +1,12 @@
 #!/bin/bash
 
+USER_HOME=$(printf "%s" ~)
 CUSTOM_LOCATION="/Volumes/Shurroo"
-DEFAULT_LOCATION="~/.shurroo"
+DEFAULT_LOCATION="${USER_HOME}""/.shurroo"
 
 function run_playbook() {
   CUSTOM_FILE="${CUSTOM_LOCATION}""/${1}/${1}.yml"
   DEFAULT_FILE="${DEFAULT_LOCATION}""/shurroo/${1}.yml"
-
 
   if [[ -f "${CUSTOM_FILE}" ]]
   then
