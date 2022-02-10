@@ -29,10 +29,11 @@ then
   exit 1
 fi
 
-# Does the script file exist?
-if [[ ! -f "$script_location/shurroo-$1.sh" ]]
+printf "Looking for '%s'\n" "$script_location/shurroo-$1.sh"
+# Can we execute the script file?
+if [[ ! -x "$script_location/shurroo-$1.sh" ]]
 then
-  printf "Missing action script for '%s'\n" "$1"
+  printf "Cannot run action script for '%s'\n" "$1"
   exit 1
 else
   action_name="$1"
