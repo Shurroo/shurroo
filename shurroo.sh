@@ -29,45 +29,21 @@ then
   printf "Unknown action '%s'\n" "$1"
   exit 1
 fi
-
-ACTION_FILE="$SCRIPT_LOCATION/shurroo-$1.sh"
-
-printf "Looking for '%s'\n" "$ACTION_FILE"
-ls -al "$ACTION_FILE"
-if [[ -f "$ACTION_FILE" ]]
-then
-  printf "File is a regular file\n"
-else
-  printf "File is NOT a regular file\n"
-fi
-if [[ -e "$ACTION_FILE" ]]
-then
-  printf "File exists\n"
-else
-  printf "File does NOT exist\n"
-fi
-if [[ -x "$ACTION_FILE" ]]
-then
-  printf "File is executable\n"
-else
-  printf "File is NOT executable\n"
-fi
-
+ACTION_SCRIPT="$SCRIPT_LOCATION/shurroo-$1.sh"
 # Does the script file exist?
-if [[ ! -e "$SCRIPT_LOCATION/shurroo-$1.sh" ]]
+if [[ ! -e "$ACTION_SCRIPT" ]]
 then
   printf "Cannot find action script for '%s'\n" "$1"
   exit 1
 fi
-
 # Can we execute the script file?
-if [[ ! -x "$SCRIPT_LOCATION/shurroo-$1.sh" ]]
+if [[ ! -x "$ACTION_SCRIPT" ]]
 then
   printf "Cannot run action script for '%s'\n" "$1"
   exit 1
 fi
 
-action_name="$1"
+ACTION_NAME="$1"
 shift
-$action_name $@
+$ACTION_NAME $@
 exit 0
