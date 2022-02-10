@@ -1,0 +1,12 @@
+---
+
+# Default playbook for Shurroo.zsh role
+
+- hosts: localhost
+  connection: local
+  roles:
+    - role: Shurro.zsh
+  vars:
+    overwrite_zshrc: false
+
+...
