@@ -13,7 +13,7 @@ function run_playbook() {
     PLAYBOOK_FILE="${CUSTOM_FILE}"
   elif [[ -f "${DEFAULT_FILE}" ]]
   then
-    PLAYBOOK_FILE="${DEFAULT_LFILE}"
+    PLAYBOOK_FILE="${DEFAULT_FILE}"
   else
     printf "Missing action playbook for '%s'\n" "${1}"
     exit 1
