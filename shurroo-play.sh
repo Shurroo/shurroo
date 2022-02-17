@@ -32,7 +32,7 @@ function run_playbook() {
   fi
   cd "${DEFAULT_LOCATION}" >/dev/null
   printf "Using %s playbook file at %s\n" "$FILE_SOURCE" "$PLAYBOOK_FILE"
-  ansible-playbook -i "localhost," "${ANSIBLE_OPTS[@]}"  "${PLAYBOOK_FILE}"
+  ansible-playbook --ask-become-pass -i "localhost," "${ANSIBLE_OPTS[@]}"  "${PLAYBOOK_FILE}"
 }
 
 for role in "${@}"
