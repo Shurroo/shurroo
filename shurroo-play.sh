@@ -7,7 +7,7 @@ DEFAULT_LOCATION="${USER_HOME}""/.shurroo"
 declare -a ANSIBLE_OPTS
 for arg in "${@}"
 do
-  if [[ "$arg" =~ \-.* ]]
+  if [[ "$arg" =~ ^\-.* ]]
   then
     ANSIBLE_OPTS+="$arg"
     shift

@@ -15,9 +15,13 @@ function play() {
   source "$SCRIPT_LOCATION/shurroo-play.sh" $@
 }
 
+function log() {
+  source "$SCRIPT_LOCATION/shurroo-log.sh" $@
+}
+
 if [[ -z "$1" ]]
 then
-  printf "\nUsage: shurroo update | roles | play \n"
+  printf "\nUsage: shurroo update | roles | play | log\n"
   printf "    install <role-name>\n\n"
   exit 2
 fi

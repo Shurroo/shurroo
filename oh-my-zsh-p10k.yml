@@ -1,0 +1,13 @@
+---
+
+# Custom playbook for Shurroo.oh-my-zsh-p10k role
+
+- hosts: localhost
+  connection: local
+  roles:
+    - role: Shurroo.oh-my-zsh-p10k
+  vars:
+    write_log_file: false
+    zshrc_level: none
+
+...

@@ -1,0 +1,14 @@
+---
+
+# Default playbook for Shurroo.git role
+
+- hosts: localhost
+  connection: local
+  roles:
+    - role: Shurroo.git
+  vars:
+    write_log_file: false
+    overwrite_gitconfig: false
+    overwrite_private_key: false
+
+...

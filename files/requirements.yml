@@ -1,9 +1,12 @@
 ---
 
+- src: https://github.com/Shurroo/zsh.git
+  name: Shurroo.zsh
+
 - src: https://github.com/Shurroo/git.git
   name: Shurroo.git
 
-- src: https://github.com/Shurroo/zsh.git
-  name: Shurroo.zsh
+- src: https://github.com/Shurroo/oh-my-zsh-p10k.git
+  name: Shurroo.oh-my-zsh-p10k
 
 ...
