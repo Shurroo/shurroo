@@ -9,4 +9,7 @@
 - src: https://github.com/Shurroo/oh-my-zsh-p10k.git
   name: Shurroo.oh-my-zsh-p10k
 
+- src: https://github.com/Shurroo/iterm2.git
+  name: Shurroo.iterm2
+
 ...

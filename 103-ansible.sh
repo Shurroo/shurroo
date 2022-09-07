@@ -9,11 +9,19 @@ brew install ansible
 cd ~/.shurroo
 if [[ -f "/Volumes/Shurroo/requirements.yml" ]]
 then
+  printf "Installing Ansible roles from custom requirements file\n"
   ansible-galaxy install -f -r /Volumes/Shurroo/requirements.yml
 else
+  printf "Installing Ansible roles from Shurroo default requirements file\n"
   ansible-galaxy install -f -r requirements.yml
 fi
 
+if [ ls ~/.shurroo/modules/ -1qA | grep -q \.py ]
+then
+  printf "Installing Ansible modules\n"
+  mkdir -f ~/.ansible/plugins/modules/
+  cp ~/.shurroo/modules/*.py ~/.ansible/plugins/modules/
+fi
 
 # END
 

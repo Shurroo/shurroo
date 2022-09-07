@@ -1,0 +1,12 @@
+---
+
+# Default playbook for Shurroo.iterm2 role
+
+- hosts: localhost
+  connection: local
+  roles:
+    - role: Shurroo.iterm2
+  vars:
+    write_log_file: false
+
+...
