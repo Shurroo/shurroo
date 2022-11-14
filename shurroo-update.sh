@@ -91,4 +91,40 @@ execute "${MKDIR[@]}" "${ANSIBLE_COLLECTIONS}"
 execute cp "${SHURROO_REPO}""/files/ansible.cfg" "${DOT_SHURROO}" >/dev/null 2>&1
 execute cp "${SHURROO_REPO}""/files/requirements.yml" "${DOT_SHURROO}" >/dev/null 2>&1
 
+# Installing Ansible with Homebrew includes a Python3 environment
+# Find it and use it for our Ansible Python interpreter
+PYTHON_KEY="interpreter_python"
+PYTHON_DEFAULT="/usr/bin/python3"
+PYTHON_CELLAR=()
+while IFS=  read -r -d $'\0'; do
+    PYTHON_CELLAR+=("$REPLY")
+done < <(find /usr/local/Cellar -regex ".*ansible.*python3" -print0)
+if (( ${#PYTHON_CELLAR[@]} == 0 ))
+then
+  abort "Found no Python interpreter for Ansible"
+fi
+if (( ${#PYTHON_CELLAR[@]} > 1 ))
+then
+  abort "Found multiple Python interpreters for Ansible"
+fi
+# Use ex (the command-line editor within vi) to edit the file in place:
+#   -s use ex in script mode
+#   -c execute this command string
+#   %  work on the whole file (shortcut for 1:$)
+#   s  substitute (just like grep and sed)
+#   |  next editor command
+#   x  exit the ex editor
+execute ex "-sc" '%s~'"${PYTHON_KEY}"' = '"${PYTHON_DEFAULT}"'~'"${PYTHON_KEY}"' = '"${PYTHON_CELLAR[0]}"'~|x' "ansible.cfg"
+
+# If we find a user binary folder in the path, link there, else link to the user home folder
+USER_PATH=$(printf "%s" "$PATH")
+USER_BINARY_FOLDER="/usr/local/bin"
+if [[ $USER_PATH =~ .*$USER_BINARY_FOLDER.* ]]
+then
+  LINK_PATH="${USER_BINARY_FOLDER}"
+else
+  LINK_PATH="${USER_HOME}"
+fi
+execute ln "-shf" "${SHURROO_REPO}""/shurroo.sh" "${LINK_PATH}""/shurroo"
+
 ohai "Shurroo repository update successful!"

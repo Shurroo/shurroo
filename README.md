@@ -62,6 +62,12 @@ If you need to update the Shurroo repository, run
 shurroo update
 ```
 
+To check the status of the Shurroo repository, run
+```shell
+shurroo doctor
+```
+In most cases, running `shurroo update` will fix any warnings shown.
+
 If you need to update the roles, run
 ```shell
 shurroo roles

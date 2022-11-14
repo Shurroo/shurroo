@@ -19,6 +19,10 @@ function log() {
   source "$SCRIPT_LOCATION/shurroo-log.sh" $@
 }
 
+function doctor() {
+  source "$SCRIPT_LOCATION/shurroo-doctor.sh" $@
+}
+
 if [[ -z "$1" ]]
 then
   printf "\nUsage: shurroo update | roles | play | log\n"
