@@ -95,18 +95,19 @@ if [ -f "${ANSIBLE_CONFIG}" ]
 then
   INTERPRETER=$(execute grep "${PYTHON_KEY}" "${ANSIBLE_CONFIG}")
   FILE_KEY=$(printf "${INTERPRETER}" | cut -f 1 -d " " -)
+  PYTHON=$(printf "${INTERPRETER}" | cut -f 3 -d " " -)
   if [ "${FILE_KEY}" != "${PYTHON_KEY}" ]
   then
     warn "No Python specified in ansible.cfg"
   fi
-  check_file "${INTERPRETER}" "Python in ansible.cfg"
+  check_file "${PYTHON}" "Python in ansible.cfg"
 fi
 
 ohai "Checking Homebrew status ..."
 BREW_DOCTOR=$(brew doctor)
 if [ "${BREW_DOCTOR}" != "Your system is ready to brew." ]
 then
-  warn printf "Homebrew shows warnings, run %s to see them" "`brew doctor`"
+  warn "$(printf "Homebrew shows warnings, run %s to see them" '`brew doctor`')"
 fi
 
-ohai "All checks completed. Please action any warnings shown."
+ohai "$(printf "All checks completed. Run %s to fix any warnings." '`shurroo update`')"
