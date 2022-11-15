@@ -127,4 +127,20 @@ else
 fi
 execute ln "-shf" "${SHURROO_REPO}""/shurroo.sh" "${LINK_PATH}""/shurroo"
 
+if [[ -f "/Volumes/Shurroo/requirements.yml" ]]
+then
+  ohai "Installing Ansible roles from custom requirements file\n"
+  execute ansible-galaxy install -f -r /Volumes/Shurroo/requirements.yml
+else
+  ohai "Installing Ansible roles from Shurroo default requirements file\n"
+  execute ansible-galaxy install -f -r requirements.yml
+fi
+
+if [ ls ~/.shurroo/shurroo/modules/ -1qA | grep -q \.py ]
+then
+  ohai "Installing Ansible modules\n"
+  execute mkdir -p ~/.ansible/plugins/modules/
+  execute cp ~/.shurroo/shurroo/modules/*.py ~/.ansible/plugins/modules/
+fi
+
 ohai "Shurroo repository update successful!"

@@ -25,7 +25,7 @@ Installation Phase
 The `install` script overcomes the problems associate with a bare metal machine, that is, a brand-new Mac with freshly-installed macOS, with nothing installed. It follows the same pattern as the Homebrew [install](https://brew.sh/) script.
 
 ```shell
-/bin/bash -c "$(curl -fsSL https://https://raw.githubusercontent.com/Shurroo/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Shurroo/install/master/install.sh)"
 ```
 
 

@@ -16,11 +16,11 @@ else
   ansible-galaxy install -f -r requirements.yml
 fi
 
-if [ ls ~/.shurroo/modules/ -1qA | grep -q \.py ]
+if [ ls ~/.shurroo/shurroo/modules/ -1qA | grep -q \.py ]
 then
   printf "Installing Ansible modules\n"
-  mkdir -f ~/.ansible/plugins/modules/
-  cp ~/.shurroo/modules/*.py ~/.ansible/plugins/modules/
+  mkdir -p ~/.ansible/plugins/modules/
+  cp ~/.shurroo/shurroo/modules/*.py ~/.ansible/plugins/modules/
 fi
 
 # END
