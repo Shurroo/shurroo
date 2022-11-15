@@ -1,0 +1,10 @@
+---
+
+# Default playbook for Shurroo.google-fonts role
+
+- hosts: localhost
+  connection: local
+  roles:
+    - role: Shurroo.google-fonts
+
+...

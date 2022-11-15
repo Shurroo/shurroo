@@ -15,4 +15,10 @@
 - src: https://github.com/Shurroo/homebrew.git
   name: Shurroo.homebrew
 
+- src: https://github.com/Shurroo/google-fonts.git
+  name: Shurroo.google-fonts
+
+- src: https://github.com/Shurroo/mac-app-store.git
+  name: Shurroo.mac-app-store
+
 ...

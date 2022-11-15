@@ -1,0 +1,15 @@
+---
+
+# Default playbook for Shurroo.mac-app-store role
+
+- hosts: localhost
+  connection: local
+  roles:
+    - role: Shurroo.mac-app-store
+  vars:
+    - required_mas_apps:
+      - { id: 409183694, name: "Keynote" }
+      - { id: 409201541, name: "Pages" }
+      - { id: 409203825, name: "Numbers" }
+
+...
