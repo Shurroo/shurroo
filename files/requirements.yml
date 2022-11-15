@@ -12,4 +12,7 @@
 - src: https://github.com/Shurroo/iterm2.git
   name: Shurroo.iterm2
 
+- src: https://github.com/Shurroo/homebrew.git
+  name: Shurroo.homebrew
+
 ...
