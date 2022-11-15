@@ -75,6 +75,7 @@ check_file() {
 }
 
 USER_HOME=$(printf "%s" ~)
+CUSTOM_LOCATION="/Volumes/Shurroo"
 DOT_SHURROO="${USER_HOME}""/.shurroo"
 SHURROO_REPO="${DOT_SHURROO}""/shurroo"
 SHURROO_GIT="${SHURROO_REPO}""/.git"
@@ -87,6 +88,9 @@ PYTHON_KEY="interpreter_python"
 ohai "Checking directories ..."
 check_dir "${SHURROO_REPO}" 'Shurroo repository'
 check_dir "${ANSIBLE_ROLES}" 'Ansible roles'
+
+ohai "Checking for custom Shurroo volume"
+check_dir "${CUSTOM_LOCATION}" 'Custom Shurroo volume'
 
 ohai "Checking Ansible configuration ..."
 check_file "${ANSIBLE_CONFIG}" 'Ansible configuration'
