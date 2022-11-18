@@ -136,7 +136,8 @@ else
   execute ansible-galaxy install -f -r requirements.yml
 fi
 
-if [ ls ~/.shurroo/shurroo/modules/ -1qA | grep -q \.py ]
+# No '[' or 'test' needed because we are using the return code of the check
+if ls -1qA ~/.shurroo/shurroo/modules/ | grep -q \.py
 then
   ohai "Installing Ansible modules\n"
   execute mkdir -p ~/.ansible/plugins/modules/
