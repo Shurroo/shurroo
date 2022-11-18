@@ -1,0 +1,14 @@
+---
+
+# Default playbook for Shurroo.chrome-extensions role
+
+- hosts: localhost
+  connection: local
+  roles:
+    - role: Shurroo.chrome-extensions
+  vars:
+    - chrome_extensions:
+      - { name: "1Password", id: "aeblfdkhhhdcdjpifhhbdiojplfjncoa" }
+      - { name: "Session Buddy", id: "edacconmaakjimmfgnblocblbcdcpbko" }
+
+...
